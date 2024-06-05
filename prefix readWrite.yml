@@ -1,0 +1,26 @@
+# specific beta- prefix only access 
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::beta-*/*"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "s3:CreateBucket",
+                "s3:DeleteBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*"
+            ]
+        }
+    ]
+}
