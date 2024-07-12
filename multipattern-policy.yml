@@ -1,0 +1,28 @@
+# Policy For Specific Access
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::nextalpha-*/*",
+                "arn:aws:s3:::conversion-*/*"
+            ]
+        },
+        {
+            "Effect": "Deny",
+            "Action": [
+                "s3:CreateBucket",
+                "s3:DeleteBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::*"
+            ]
+        }
+    ]
+}
